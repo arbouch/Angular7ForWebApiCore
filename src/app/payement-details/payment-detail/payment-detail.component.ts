@@ -29,6 +29,13 @@ this.service.formData = {
 }
 }
 onSubmit(form:NgForm) {
-  
+  this.service.postPayementDetail(form.value).subscribe(
+    res=>{
+      this.resetForm(form);
+    },
+    err => {console.log(err);
+    }
+    
+  )
 }
 }
