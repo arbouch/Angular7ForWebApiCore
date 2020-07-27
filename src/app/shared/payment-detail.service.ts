@@ -6,10 +6,10 @@ import {  HttpClient} from "@angular/common/http";
 })
 export class PaymentDetailService {
 formData:PaymentDetail;
-readonly root ='http://localhost:59570/api/';
+readonly root ='http://localhost:59570/api';
   constructor( private http:HttpClient) { }
   postPayementDetail(formData:PaymentDetail) {
-return this.http.post(this.root+'/PayementDetail',formData)
+return  this.http.post(this.root + '/PayementDetail',formData)
   }
 }
 

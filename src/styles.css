@@ -4,3 +4,15 @@ input.ng-touched.ng-invalid{
 input.ng-valid{
     border-color:green;
 }   
+.green-icon{
+    color: green;
+
+}
+
+.red-icon{
+    color: red;
+
+}
+#toast-container > div{
+ opacity: 1;
+}
