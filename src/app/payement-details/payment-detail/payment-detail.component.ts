@@ -30,14 +30,32 @@ this.service.formData = {
 }
 }
 onSubmit(form:NgForm) {
-  this.service.postPayementDetail(form.value).subscribe(
+  if(this.service.formData.PMId==0)
+  this.insertRecord(form);
+  else 
+  this.updateRecord(form);
+}
+insertRecord(form:NgForm) {
+  this.service.postPayementDetail().subscribe(
     res=>{
       this.resetForm(form);
       this.toast.success('ajout avec succees',"Payement Detail Register");
+      this.service.refreshList();
     },
     err => {console.log(err);
-    }
-    
+    } 
+  )
+}
+
+updateRecord(form:NgForm) {
+  this.service.putPayementDetail().subscribe(
+    res=>{
+      this.resetForm(form);
+      this.toast.success('modification avec succees',"Payement Detail Register");
+      this.service.refreshList();
+    },
+    err => {console.log(err);
+    } 
   )
 }
 }
